@@ -1,0 +1,6 @@
+{
+    "parcelTsPluginOptions": {
+        // If true type-checking is disabled
+        "transpileOnly": false
+    }
+}
