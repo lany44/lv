@@ -6,16 +6,14 @@
  */
 
 import { vnode, VNode, VNodeData } from "./vnode"
-import {isArray, isString} from './modules/is'
+import {isArray, isString} from './is'
 
-console.log('vnode: ', vnode)
-
-export function h(tagName: string): VNode
-export function h(tagName: string, props: VNodeData): VNode 
-export function h(tagName: string, children: Array<VNode>): VNode 
-export function h(tagName: string, props: VNodeData, children: Array<VNode>): VNode 
-export function h(tagName: string, props: VNodeData, text: string): VNode 
-export function h(tagName: string, b?: any, c?: any): VNode {
+export function h(tag: string): VNode
+export function h(tag: string, props: VNodeData): VNode
+export function h(tag: string, children: Array<VNode>): VNode
+export function h(tag: string, props: VNodeData, children: Array<VNode>): VNode
+export function h(tag: string, props: VNodeData, text: string): VNode
+export function h(tag: string, b?: any, c?: any): VNode {
     let text, props, children
     if (c) {
         if (isString(c)) {props = b; text = c}
@@ -29,7 +27,7 @@ export function h(tagName: string, b?: any, c?: any): VNode {
         }
     }
 
-    return vnode(tagName, text, props, children)
+    return vnode(tag, text, props, children, undefined)
 }
 
 export default h

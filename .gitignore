@@ -6,3 +6,8 @@ package-lock.json
 # generated
 .cache
 dist
+
+
+# editor
+.vscode
+.idea
